@@ -78,16 +78,6 @@
         "name": "Drive",
         "symbol": "Drive"
       },
-      "7": {
-        "InputPort": true,
-        "ControlPort": true,
-        "default": "10.0",
-        "index": 7,
-        "maximum": "20.0",
-        "minimum": "1.0",
-        "name": "Cabinet",
-        "symbol": "Cabinet"
-      },
       "8": {
         "InputPort": true,
         "ControlPort": true,
@@ -121,18 +111,6 @@
         "portProperty": "http://lv2plug.in/ns/lv2core#enumeration",
         "scalePoint": "_:n9b565a7eacba47e48628b74fdc44504bb57",
         "symbol": "t_model"
-      },
-      "11": {
-        "InputPort": true,
-        "ControlPort": true,
-        "default": 0,
-        "index": 11,
-        "maximum": 18,
-        "minimum": 0,
-        "name": "Cab Model",
-        "portProperty": "http://lv2plug.in/ns/lv2core#enumeration",
-        "scalePoint": "_:n9b565a7eacba47e48628b74fdc44504bb77",
-        "symbol": "c_model"
       }
     }
   },

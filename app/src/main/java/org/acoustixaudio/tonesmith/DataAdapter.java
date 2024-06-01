@@ -32,6 +32,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.PipedOutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Objects;
@@ -270,6 +271,9 @@ public class DataAdapter extends RecyclerView.Adapter <DataAdapter.ViewHolder> {
                     spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            for (int control = 0; control < index.size(); control++)
+                                AudioEngine.setPluginControlByIndex(holder.getAdapterPosition(), index.get(control), position);
+
                             slider.setValue(position);
                         }
 
