@@ -1,0 +1,43 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:title="Purchase Premium"
+        android:icon="@mipmap/ic_launcher"
+        android:key="purchase"
+        android:summary="Unlock all features"/>
+    <PreferenceCategory
+        android:title="About">
+        <Preference
+            android:title="@string/app_name"
+            android:key="about"
+            android:summary="1.0 Build 4"/>
+        <Preference android:title="Privacy Policy"
+            android:key="privacy"/>
+        <Preference android:title="Source Code"
+            android:key="source"
+            android:summary="AX Voice Recorder is completely open source. Explore the source code."
+            />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Audio">
+        <ListPreference
+            android:title="Input Device"
+            android:key="input"
+            android:defaultValue="default"/>
+
+        <ListPreference
+            android:title="Output Device"
+            android:key="output"
+            android:defaultValue="default"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Saving">
+
+        <DropDownPreference
+            android:title="MP3 Encode Preset"
+            android:key="lame_preset"
+            android:defaultValue="1001"
+            android:entries="@array/mp3_presets"
+            android:entryValues="@array/mp3_presets_values"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Purchase">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:id="@+id/buy_bg"
+        android:src="@drawable/bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/limit"
+                android:textColor="@color/white"
+                android:fontFamily="@font/comfortaa"
+                android:background="@drawable/rounded_corners_transparent"/>
+            <LinearLayout
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="match_parent"
+                android:layout_marginTop="40dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_gravity="center"
+                    android:layout_height="100dp"
+                    android:src="@drawable/vocal"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30dp"
+                    android:textColor="@color/white"
+                    android:shadowColor="@color/white"
+                    android:shadowRadius="5"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="Get Premium"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
+                        android:text="$2"
+                        android:textAlignment="center"
+                        android:id="@+id/price"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/comfortaa"
+                        android:layout_gravity="center"
+                        android:textSize="30dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$20 "
+                        android:layout_gravity="center"
+                        android:textStyle="italic"
+                        android:textSize="24dp"
+                        android:id="@+id/old_price"
+                        android:visibility="gone"
+                        android:layout_marginLeft="20dp"
+                        android:fontFamily="@font/gruppo"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Save 90%"
+                        android:visibility="gone"
+                        android:layout_gravity="center"
+                        android:textStyle="italic"
+                        android:textSize="24dp"
+                        android:layout_marginLeft="20dp"
+                        android:fontFamily="@font/gruppo"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Limited time deal"
+                    android:layout_gravity="center"
+                    android:textStyle="italic"
+                    android:visibility="gone"
+                    android:textSize="24dp"
+                    android:fontFamily="@font/gruppo"
+                    android:textColor="@color/white"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Tap to Buy Now"
+                    android:id="@+id/buy"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:shadowColor="@color/white"
+                    android:shadowRadius="5"
+                    android:fontFamily="@font/comfortaa"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@android:color/transparent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:background="@drawable/rounded_corners_transparent"
+                    android:layout_width="match_parent"
+                    android:textAlignment="viewStart"
+                    android:fontFamily="@font/comfortaa"
+                    android:textSize="20dp"
+                    android:padding="20dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:breakStrategy="high_quality"
+                    android:text="@string/pro_features"
+                    android:layout_height="wrap_content"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Get Source Code"
+                    android:fontFamily="@font/comfortaa"
+                    android:shadowRadius="5"
+                    android:layout_gravity="center"
+                    android:shadowColor="@color/white"
+                    android:textColor="@color/white"
+                    android:visibility="visible"
+                    android:id="@+id/source"
+                    android:drawableLeft="@drawable/baseline_code_24"
+                    android:background="@android:color/transparent"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/comfortaa"
+                    android:background="@drawable/rounded_corners_transparent"
+                    android:text="♥ This app is open source"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <item android:id="@+id/share"
+        android:icon="@drawable/baseline_share_24"
+        android:title="Share"/>
+    <item android:id="@+id/rename"
+        android:icon="@drawable/baseline_mode_edit_24"
+        android:title="Rename"/>
+    <item android:id="@+id/delete"
+        android:icon="@drawable/baseline_delete_forever_24"
+        android:title="Delete"/>
+</menu>

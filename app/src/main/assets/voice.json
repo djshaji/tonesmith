@@ -1,0 +1,349 @@
+{
+  "30700": {
+    "name": "Compressor",
+    "controls":{
+      "0": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 2.0,
+        "index": 0,
+        "maximum": 20.0,
+        "minimum": 1.0,
+        "name": "RATIO",
+        "symbol": "RATIO"
+      },
+      "1": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 3.0,
+        "index": 1,
+        "maximum": 20.0,
+        "minimum": "0.0",
+        "name": "KNEE",
+        "symbol": "KNEE"
+      },
+      "2": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": -20.0,
+        "index": 2,
+        "maximum": 10.0,
+        "minimum": -96.0,
+        "name": "THRESHOLD",
+        "symbol": "THRESHOLD"
+      },
+      "3": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 0.5,
+        "index": 3,
+        "maximum": 10.0,
+        "minimum": 0.0,
+        "name": "RELEASE",
+        "symbol": "RELEASE"
+      },
+      "4": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 0.002,
+        "index": 4,
+        "maximum": 1.0,
+        "minimum": 0.0,
+        "name": "ATTACK",
+        "symbol": "ATTACK"
+      }
+    }
+  },
+
+  "28000": {
+    "name": "Reverb",
+    "controls": {
+      "2": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 1.0,
+        "index": 2,
+        "maximum": 1.0,
+        "minimum": 0.0,
+        "name": "Amount",
+        "symbol": "EFFECT"
+      },
+      "3": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 20.0,
+        "index": 3,
+        "maximum": 200.0,
+        "minimum": 1.0,
+        "name": "Delay",
+        "symbol": "PREDELAYMS"
+      },
+      "4": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 0.3,
+        "index": 4,
+        "maximum": 1.0,
+        "minimum": 0.0,
+        "name": "Reflections",
+        "symbol": "RT"
+      },
+      "5": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 1.0,
+        "index": 5,
+        "maximum": 3.0,
+        "minimum": 0.0,
+        "name": "ROOMSIZE",
+        "symbol": "ROOMSIZE"
+      },
+      "6": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 0.5,
+        "index": 6,
+        "maximum": 1.0,
+        "minimum": 0.0,
+        "name": "Mix",
+        "symbol": "DRYWET"
+      }
+    }
+  },
+
+  "3600": {
+    "name": "Echo",
+    "controls": {
+      "2": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 20,
+        "index": 2,
+        "maximum": 100.0,
+        "minimum": 0.0,
+        "name": "Amount",
+        "symbol": "DRYWET"
+      },
+      "3": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 480,
+        "index": 3,
+        "maximum": 2000.0,
+        "minimum": 1.0,
+        "name": "Time (ms)",
+        "symbol": "DRYWET"
+      }
+    }
+  },
+
+  "3300": {
+    "name":"Equalizer",
+    "controls": {
+      "0": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 0,
+        "index": 0,
+        "maximum": 12.0,
+        "minimum": -12.0,
+        "name": "Low",
+        "symbol": "DRYWET"
+      },
+      "1": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 0,
+        "index": 1,
+        "maximum": 12.0,
+        "minimum": -12.0,
+        "name": "Mid",
+        "symbol": "DRYWET"
+      },
+      "2": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 0,
+        "index": 2,
+        "maximum": 12.0,
+        "minimum": -12.0,
+        "name": "High",
+        "symbol": "DRYWET"
+      }
+    }
+  },
+
+  "26100": {
+    "name": "Flanger",
+    "controls": {
+      "0": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 0.5,
+        "index": 0,
+        "maximum": 5.0,
+        "minimum": 0.0,
+        "name": "DEPTH",
+        "symbol": "depth"
+      },
+      "1": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 5.0,
+        "index": 1,
+        "maximum": 10.0,
+        "minimum": 0.0,
+        "name": "WIDTH",
+        "symbol": "width"
+      },
+      "2": {
+        "InputPort": true,
+        "ControlPort": true,
+        "http://lv2plug.in/ns/extensions/units#unit": "http://lv2plug.in/ns/extensions/units#hz",
+        "default": 0.2,
+        "index": 2,
+        "maximum": 10.0,
+        "minimum": 0.05,
+        "name": "FREQ",
+        "symbol": "freq"
+      },
+      "5": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 0.0,
+        "index": 5,
+        "maximum": 1.0,
+        "minimum": -1.0,
+        "name": "MIX",
+        "symbol": "mix"
+      }
+    }
+  },
+
+  "30500": {
+    "name": "Chorus",
+    "controls": {
+      "0": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 0.5,
+        "index": 0,
+        "maximum": 1.0,
+        "minimum": 0.0,
+        "name": "Level",
+        "symbol": "level"
+      },
+      "1": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 0.02,
+        "index": 1,
+        "maximum": 0.2,
+        "minimum": 0.0,
+        "name": "Delay",
+        "symbol": "delay"
+      },
+      "2": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 0.02,
+        "index": 2,
+        "maximum": 1.0,
+        "minimum": 0.0,
+        "name": "Depth",
+        "symbol": "depth"
+      },
+      "3": {
+        "InputPort": true,
+        "ControlPort": true,
+        "http://lv2plug.in/ns/extensions/units#unit": "http://lv2plug.in/ns/extensions/units#hz",
+        "default": 3.0,
+        "index": 3,
+        "maximum": 10.0,
+        "minimum": 0.1,
+        "name": "Freq",
+        "symbol": "freq"
+      }
+    }
+  },
+  "500": {
+    "name": "Autotune",
+    "controls": {
+      "1": {
+        "InputPort": true,
+        "ControlPort": true,
+        "http://lv2plug.in/ns/extensions/units#unit": "http://lv2plug.in/ns/extensions/units#hz",
+        "default": 0,
+        "index": 1,
+        "maximum": 12.0,
+        "minimum": -36.0,
+        "name": "Pitch",
+        "symbol": "freq"
+      },
+      "2": {
+        "InputPort": true,
+        "ControlPort": true,
+        "http://lv2plug.in/ns/extensions/units#unit": "http://lv2plug.in/ns/extensions/units#hz",
+        "default": "0",
+        "index": 2,
+        "maximum": 1.0,
+        "minimum": 0.0,
+        "name": "Frequency",
+        "symbol": "freq"
+      },
+      "15": {
+        "InputPort": true,
+        "ControlPort": true,
+        "http://lv2plug.in/ns/extensions/units#unit": "http://lv2plug.in/ns/extensions/units#hz",
+        "default": 1.0,
+        "index": 15,
+        "maximum": 1.0,
+        "minimum": 0.0,
+        "name": "Strength",
+        "symbol": "freq"
+      },
+      "16": {
+        "InputPort": true,
+        "ControlPort": true,
+        "http://lv2plug.in/ns/extensions/units#unit": "http://lv2plug.in/ns/extensions/units#hz",
+        "default": 1.0,
+        "index": 16,
+        "maximum": 1.0,
+        "minimum": 0.0,
+        "name": "Smoothness",
+        "symbol": "freq"
+      },
+      "26": {
+        "InputPort": true,
+        "ControlPort": true,
+        "http://lv2plug.in/ns/extensions/units#unit": "http://lv2plug.in/ns/extensions/units#hz",
+        "default": 1.0,
+        "index": 26,
+        "maximum": 1.0,
+        "minimum": 0.0,
+        "name": "Mix",
+        "symbol": "freq"
+
+      }
+    }
+  },
+  "3500": {
+    "name": "Normalizer",
+    "controls": {
+      "0": {
+        "name": "Target Amplitude",
+        "default": 0,
+        "minimum": 0,
+        "maximum": -12,
+        "index": 0
+      },
+      "1": {
+        "name": "Compression Amount",
+        "default": 0.5,
+        "minimum": 0,
+        "maximum": 1,
+        "index": [1,2,3]
+      }
+    }
+  }
+}
