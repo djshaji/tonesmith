@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     boolean running = false;
     ExoPlayer mediaPlayer = null;
     String dir, filename, basename ;
-    JSONObject allPlugins;
+    JSONObject allPlugins, ampModels;
     ArrayList<String> presetsForAdapter ;
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
     String presetsDir ;
     RecyclerView recyclerView;
     org.acoustixaudio.tonesmith.DataAdapter dataAdapter;
-    JSONObject ampModels, availablePlugins, availablePluginsLV2;
+    JSONObject availablePlugins, availablePluginsLV2;
     static String[] sharedLibraries;
     static String[] sharedLibrariesLV2;
     Spinner spinner ;
@@ -142,6 +142,8 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 //        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+
+        ampModels = loadJSONFromAssetFile(this, "amps.json");
 
         defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
 
@@ -446,7 +448,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(dataAdapter);
 
         factoryPresets = dataAdapter.getFactoryPresets();
-        Log.d(TAG, String.format ("factory presets: %s", factoryPresets));
+        if (factoryPresets.length > 0)
+            Log.d(TAG, String.format ("factory presets: %s", factoryPresets));
 
         presetsForAdapter = new ArrayList<>(Arrays.asList(factoryPresets));
         File [] userPresets = getExternalFilesDir(DIRECTORY_DOCUMENTS).listFiles();

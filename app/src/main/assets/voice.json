@@ -55,62 +55,143 @@
     }
   },
 
-  "28000": {
-    "name": "Reverb",
+  "32400": {
+    "name": "Amplifier",
     "controls": {
       "2": {
         "InputPort": true,
         "ControlPort": true,
-        "default": 1.0,
+        "default": "20.0",
         "index": 2,
-        "maximum": 1.0,
-        "minimum": 0.0,
-        "name": "Amount",
-        "symbol": "EFFECT"
+        "maximum": "100.0",
+        "minimum": "1.0",
+        "name": "Distortion",
+        "symbol": "Distortion"
       },
       "3": {
         "InputPort": true,
         "ControlPort": true,
-        "default": 20.0,
+        "default": "0.25",
         "index": 3,
-        "maximum": 200.0,
-        "minimum": 1.0,
-        "name": "Delay",
-        "symbol": "PREDELAYMS"
+        "maximum": "1.0",
+        "minimum": "0.01",
+        "name": "Drive",
+        "symbol": "Drive"
       },
-      "4": {
+      "7": {
         "InputPort": true,
         "ControlPort": true,
-        "default": 0.3,
-        "index": 4,
-        "maximum": 1.0,
-        "minimum": 0.0,
-        "name": "Reflections",
-        "symbol": "RT"
+        "default": "10.0",
+        "index": 7,
+        "maximum": "20.0",
+        "minimum": "1.0",
+        "name": "Cabinet",
+        "symbol": "Cabinet"
       },
-      "5": {
+      "8": {
         "InputPort": true,
         "ControlPort": true,
-        "default": 1.0,
-        "index": 5,
-        "maximum": 3.0,
-        "minimum": 0.0,
-        "name": "ROOMSIZE",
-        "symbol": "ROOMSIZE"
+        "default": "5.0",
+        "index": 8,
+        "maximum": "10.0",
+        "minimum": "0.0",
+        "name": "Presence",
+        "symbol": "Presence"
+      },
+      "9": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 0,
+        "index": 9,
+        "maximum": 18,
+        "minimum": 0,
+        "name": "Model",
+        "portProperty": "http://lv2plug.in/ns/lv2core#enumeration",
+        "scalePoint": "_:n9b565a7eacba47e48628b74fdc44504bb29",
+        "symbol": "model"
+      },
+      "10": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 1,
+        "index": 10,
+        "maximum": 26,
+        "minimum": 0,
+        "name": "Tonestack Model",
+        "portProperty": "http://lv2plug.in/ns/lv2core#enumeration",
+        "scalePoint": "_:n9b565a7eacba47e48628b74fdc44504bb57",
+        "symbol": "t_model"
+      },
+      "11": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 0,
+        "index": 11,
+        "maximum": 18,
+        "minimum": 0,
+        "name": "Cab Model",
+        "portProperty": "http://lv2plug.in/ns/lv2core#enumeration",
+        "scalePoint": "_:n9b565a7eacba47e48628b74fdc44504bb77",
+        "symbol": "c_model"
+      }
+    }
+  },
+  "32500": {
+    "name": "Distortion",
+    "controls": {
+      "0": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": "0.5",
+        "index": 0,
+        "maximum": "1.0",
+        "minimum": "0.0",
+        "name": "TONE",
+        "symbol": "TONE"
+      },
+      "1": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": "10.5",
+        "index": 1,
+        "maximum": "20.0",
+        "minimum": "1.0",
+        "name": "DRIVE",
+        "symbol": "DRIVE"
+      },
+      "2": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": "0.0",
+        "index": 2,
+        "maximum": "20.0",
+        "minimum": "-20.0",
+        "name": "PREGAIN",
+        "symbol": "PREGAIN"
+      },
+      "3": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": "0.0",
+        "index": 3,
+        "maximum": "20.0",
+        "minimum": "-20.0",
+        "name": "GAIN",
+        "symbol": "GAIN1"
       },
       "6": {
         "InputPort": true,
         "ControlPort": true,
-        "default": 0.5,
+        "default": "0.0",
         "index": 6,
-        "maximum": 1.0,
-        "minimum": 0.0,
-        "name": "Mix",
-        "symbol": "DRYWET"
+        "maximum": "1.0",
+        "minimum": "0.0",
+        "name": "HIGHGAIN",
+        "portProperty": "http://lv2plug.in/ns/lv2core#toggled",
+        "symbol": "HIGHGAIN"
       }
     }
   },
-
   "3600": {
     "name": "Echo",
     "controls": {
@@ -136,7 +217,32 @@
       }
     }
   },
-
+  "12900": {
+    "name": "Reverb",
+    "controls": {
+      "0": {
+        "name": "Decay",
+        "default": 2400,
+        "minimum": 0,
+        "maximum": 10000,
+        "index": 0
+      },
+      "1": {
+        "name": "Amount",
+        "default": -6,
+        "minimum": -24,
+        "maximum": 12,
+        "index": 2
+      },
+      "2": {
+        "name": "Mode",
+        "default": 0,
+        "minimum": 0,
+        "maximum": 42,
+        "index": 7
+      }
+    }
+  },
   "3300": {
     "name":"Equalizer",
     "controls": {
@@ -266,64 +372,22 @@
       }
     }
   },
-  "500": {
-    "name": "Autotune",
+  "5500": {
+    "name": "Cabinet",
     "controls": {
-      "1": {
-        "InputPort": true,
-        "ControlPort": true,
-        "http://lv2plug.in/ns/extensions/units#unit": "http://lv2plug.in/ns/extensions/units#hz",
+      "0": {
+        "name": "Gain",
         "default": 0,
-        "index": 1,
-        "maximum": 12.0,
-        "minimum": -36.0,
-        "name": "Pitch",
-        "symbol": "freq"
+        "minimum": -12,
+        "maximum": 12,
+        "index": 2
       },
-      "2": {
-        "InputPort": true,
-        "ControlPort": true,
-        "http://lv2plug.in/ns/extensions/units#unit": "http://lv2plug.in/ns/extensions/units#hz",
-        "default": "0",
-        "index": 2,
-        "maximum": 1.0,
-        "minimum": 0.0,
-        "name": "Frequency",
-        "symbol": "freq"
-      },
-      "15": {
-        "InputPort": true,
-        "ControlPort": true,
-        "http://lv2plug.in/ns/extensions/units#unit": "http://lv2plug.in/ns/extensions/units#hz",
-        "default": 1.0,
-        "index": 15,
-        "maximum": 1.0,
-        "minimum": 0.0,
-        "name": "Strength",
-        "symbol": "freq"
-      },
-      "16": {
-        "InputPort": true,
-        "ControlPort": true,
-        "http://lv2plug.in/ns/extensions/units#unit": "http://lv2plug.in/ns/extensions/units#hz",
-        "default": 1.0,
-        "index": 16,
-        "maximum": 1.0,
-        "minimum": 0.0,
-        "name": "Smoothness",
-        "symbol": "freq"
-      },
-      "26": {
-        "InputPort": true,
-        "ControlPort": true,
-        "http://lv2plug.in/ns/extensions/units#unit": "http://lv2plug.in/ns/extensions/units#hz",
-        "default": 1.0,
-        "index": 26,
-        "maximum": 1.0,
-        "minimum": 0.0,
-        "name": "Mix",
-        "symbol": "freq"
-
+      "1": {
+        "name": "Model",
+        "default": 0,
+        "minimum": 0,
+        "maximum": 21,
+        "index": 0
       }
     }
   },

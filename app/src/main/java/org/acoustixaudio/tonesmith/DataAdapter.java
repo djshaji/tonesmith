@@ -2,13 +2,18 @@ package org.acoustixaudio.tonesmith;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
+import android.widget.Space;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -179,8 +184,8 @@ public class DataAdapter extends RecyclerView.Adapter <DataAdapter.ViewHolder> {
 
                 try {
                     float value = AudioEngine.getActivePluginValueByIndex(position, index.get(0)) ;
-                    Log.i(TAG, "onBindViewHolder: " +
-                            String.format ("value %d:%d %f", position, index.get(0), value));
+                    Log.i(TAG, name +
+                            String.format (" value %d:%d %f", position, index.get(0), value));
                     slider.setValue(value);
                     slider.setValueTo((float) max);
                     slider.setValueFrom((float) min);
@@ -188,13 +193,107 @@ public class DataAdapter extends RecyclerView.Adapter <DataAdapter.ViewHolder> {
                     Log.e(TAG, String.format("onBindViewHolder: error setting slider value: %d, %d", min, max), e);
                 }
 
+                boolean isSpinner = false;
+                Spinner spinner ;
+                spinner = new Spinner(context);
+
+                Button prev = new Button(context);
+                Button next = new Button(context);
+                LinearLayout layout = new LinearLayout(context);
+
+                layout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                layout.setOrientation(LinearLayout.HORIZONTAL);
+
+                if (mainActivity.ampModels.has(name)) {
+                    JSONObject control ;
+                    ArrayList <String> models = new ArrayList<>();
+                    try {
+                        control = mainActivity.ampModels.getJSONObject(name) ;
+                        if (control.has(String.valueOf(index.get(0)))) {
+                            isSpinner = true ;
+                            JSONArray modelsData = control.getJSONArray(String.valueOf(index.get(0)));
+                            for (int x_ = 0 ; x_ < modelsData.length() ; x_++) {
+                                models.add(modelsData.getString(x_));
+                            }
+
+                        }
+                    } catch (JSONException e) {
+                        Log.e(TAG, "onBindViewHolder: error parsing amp model " + name, e);
+                    }
+
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(mainActivity,
+                            android.R.layout.simple_spinner_item, models);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spinner.setAdapter(adapter);
+
+                    prev = new Button(context);
+                    next = new Button(context);
+
+                    prev.setText("<");
+                    next.setText(">");
+
+                    prev.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int selected = spinner.getSelectedItemPosition();
+                            if (selected > 0)
+                                spinner.setSelection(selected - 1);
+                        }
+                    });
+
+                    next.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int selected = spinner.getSelectedItemPosition();
+                            if (selected < adapter.getCount() - 1)
+                                spinner.setSelection(selected + 1);
+                        }
+                    });
+                }
+
+                if (isSpinner) {
+                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(100, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    next.setLayoutParams(layoutParams);
+                    prev.setLayoutParams(layoutParams);
+
+                    prev.setBackgroundColor(0);
+                    next.setBackgroundColor(0);
+
+                    layout.addView(prev);
+
+                    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    spinner.setLayoutParams(params);
+                    layout.addView(next);
+                    layout.addView(spinner);
+
+                    slider.setVisibility(View.GONE);
+                    spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            slider.setValue(position);
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+                }
+
                 linearLayout.addView(slider);
+                linearLayout.addView(layout);
+
                 Log.i(TAG, "onBindViewHolder: slider set on click listener");
                 slider.addOnChangeListener(new Slider.OnChangeListener() {
                     @Override
                     public void onValueChange(@NonNull Slider slider, float v, boolean b) {
-                        if (! b)
+                        if (! b) {
+                            if ( spinner.getSelectedItemPosition() != v) {
+                                spinner.setSelection((int) v);
+                            }
+
                             return;
+                        }
 
                         for (int control = 0; control < index.size(); control++)
                             AudioEngine.setPluginControlByIndex(holder.getAdapterPosition(), index.get(control), v);

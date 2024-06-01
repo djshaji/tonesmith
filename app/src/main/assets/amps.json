@@ -113,7 +113,7 @@
     ]
   },
 
-  "TAP Reverberator": {
+  "Reverb": {
     "7": [
       "AfterBurn" ,
       "AfterBurn (Long)" ,
@@ -192,8 +192,8 @@
       "Freeverb",
       "Random"
     ]
-  }, "GxAmplifier": {
-    "13": [
+  }, "Amplifier": {
+    "9": [
       "12ax7",
       "12AU7",
       "12AT7",
@@ -214,7 +214,7 @@
       "pre 6DJ8/ push-pull 6V6",
       "--"
     ],
-    "2": [
+    "10": [
       "default",
       "Bassman Style",
       "Twin Reverb Style",
@@ -243,7 +243,7 @@
       "Gibsen Style",
       "Off"
     ],
-  "3": [
+  "11": [
     "4x12",
     "2x12",
     "1x12",
@@ -666,7 +666,7 @@
 
     ]
   },
-  "SWH Impulse convolver": {
+  "Cabinet": {
     "0": [
       "Unit impulse (identity) ",
       "My flat (light natural reverb) ",
