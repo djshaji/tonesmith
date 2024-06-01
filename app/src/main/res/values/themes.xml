@@ -2,7 +2,11 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.AXVoiceRecorder" parent="Theme.Material3.Dark.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+         <item name="colorSecondary">#07487C</item>
+         <item name="colorAccent">#0B74C8</item>
+         <item name="colorOnPrimary">#07487C</item>
+         <item name="colorPrimary">#ECF6FE</item>
+         <item name="colorOnSecondary">#ECF6FE</item>
     </style>
 
     <style name="Theme.AXVoiceRecorder" parent="Base.Theme.AXVoiceRecorder" />

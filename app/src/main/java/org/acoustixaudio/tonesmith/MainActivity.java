@@ -307,10 +307,9 @@ public class MainActivity extends AppCompatActivity {
         record.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                buttonView.setCompoundDrawables(null, null, null, null);
                 if (isChecked) {
                     lastPlayPause.setChecked(false);
-                    buttonView.setCompoundDrawablesWithIntrinsicBounds(null,getResources().getDrawable(R.drawable.stop1),null,null);
+//                    buttonView.setCompoundDrawablesWithIntrinsicBounds(null,getResources().getDrawable(R.drawable.stop1),null,null);
 
                     SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy_HH.mm.ss");
                     Date date = new Date();
@@ -326,7 +325,7 @@ public class MainActivity extends AppCompatActivity {
                     AudioEngine.toggleRecording(true);
                     lastRecordedBox.setVisibility(View.GONE);
                 } else {
-                    buttonView.setCompoundDrawablesWithIntrinsicBounds(null,getResources().getDrawable(R.drawable.record),null,null);
+//                    buttonView.setCompoundDrawablesWithIntrinsicBounds(null,getResources().getDrawable(R.drawable.record),null,null);
 
                     if (! preview.isChecked ())
                         stopEffect();
@@ -371,16 +370,15 @@ public class MainActivity extends AppCompatActivity {
         preview.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                buttonView.setCompoundDrawables(null, null, null, null);
                 if (isChecked) {
-                    buttonView.setButtonDrawable(getResources().getDrawable(R.drawable.mute));
+//                    buttonView.setButtonDrawable(getResources().getDrawable(R.drawable.mute));
                     AudioEngine.setOutputVolume(1f);
                     if (! running)
                         startEffect();
                     else
                         Log.i(TAG, "onCheckedChanged: effect already running");
                 } else {
-                    buttonView.setButtonDrawable(getResources().getDrawable(R.drawable.preview));
+//                    buttonView.setButtonDrawable(getResources().getDrawable(R.drawable.preview));
                     AudioEngine.setOutputVolume(0f);
 
                     if (! record.isChecked()) {
@@ -520,7 +518,7 @@ public class MainActivity extends AppCompatActivity {
         applySettings();
 
         if (BuildConfig.BUILD_TYPE.equals("debug")) {
-            proVersion = true ;
+//            proVersion = true ;
         }
 
         if (proVersion) {

@@ -25,7 +25,7 @@
                 android:textSize="24dp"
                 android:textStyle="bold"
                 android:id="@+id/header_app_name"
-                android:text="AX Voice Recorder"/>
+                android:text="@string/app_name"/>
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

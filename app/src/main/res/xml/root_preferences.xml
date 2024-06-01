@@ -14,7 +14,7 @@
             android:key="privacy"/>
         <Preference android:title="Source Code"
             android:key="source"
-            android:summary="AX Voice Recorder is completely open source. Explore the source code."
+            android:summary="Tone Smith is completely open source. Explore the source code."
             />
     </PreferenceCategory>
     <PreferenceCategory android:title="Audio">
