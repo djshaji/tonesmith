@@ -321,8 +321,12 @@ public class MainActivity extends AppCompatActivity {
                     applySettings();
                     Log.d(TAG, String.format ("[filename]: %s", filename));
 
-                    if (! running)
-                        startEffect();
+//                    if (! running)
+//                        startEffect();
+
+
+                    if (! preview.isChecked())
+                        preview.setChecked(true);
 
                     AudioEngine.toggleRecording(true);
                     lastRecordedBox.setVisibility(View.GONE);
@@ -385,6 +389,8 @@ public class MainActivity extends AppCompatActivity {
 
                     if (! record.isChecked()) {
                         stopEffect();
+                    } else {
+                        record.setChecked(false);
                     }
                 }
             }
