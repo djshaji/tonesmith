@@ -35,3 +35,11 @@ Compressor / Limiter
 
 ## Completely open source
 Made with ❤️
+
+## Screenshots
+![Screenshot_20240602-175259 png](https://github.com/djshaji/tonesmith/assets/17184025/6d193f84-d9ed-499a-ab48-d2f35c6a79c3)
+![Screenshot_20240602-175307 png](https://github.com/djshaji/tonesmith/assets/17184025/f497f83a-6e2e-4e36-a219-3c2ca8604539)
+![Screenshot_20240602-175321 png](https://github.com/djshaji/tonesmith/assets/17184025/017c073e-99e2-461c-8103-f64bf7241650)
+![Screenshot_20240602-175326 png](https://github.com/djshaji/tonesmith/assets/17184025/c5a43e18-f6ee-4ebe-ab32-0e6e797523b7)
+![Screenshot_20240602-175335 png](https://github.com/djshaji/tonesmith/assets/17184025/802728a9-77fa-4573-ada8-a204da1b1be6)
+![Screenshot_20240602-175340 png](https://github.com/djshaji/tonesmith/assets/17184025/41608405-814e-466c-8d34-780f0daac8fb)
