@@ -21,6 +21,7 @@ import android.os.Bundle;
 import com.android.billingclient.api.AcknowledgePurchaseParams;
 import com.android.billingclient.api.AcknowledgePurchaseResponseListener;
 import com.android.billingclient.api.BillingClient;
+import com.android.billingclient.api.BillingClientStateListener;
 import com.android.billingclient.api.BillingResult;
 import com.android.billingclient.api.Purchase;
 import com.android.billingclient.api.PurchasesResponseListener;
@@ -213,6 +214,20 @@ public class MainActivity extends AppCompatActivity {
                     .enablePendingPurchases()
                     .setListener(purchasesUpdatedListener)
                     .build();
+
+            billingClient.startConnection(new BillingClientStateListener() {
+                @Override
+                public void onBillingServiceDisconnected() {
+
+                }
+
+                @Override
+                public void onBillingSetupFinished(@NonNull BillingResult billingResult) {
+                    Log.d(TAG, "onBillingSetupFinished: " + billingResult.getDebugMessage());
+                    billingClient.queryPurchasesAsync(BillingClient.SkuType.INAPP, purchasesResponseListener);
+
+                }
+            });
         }
 
         AudioEngine.setExportFormat(2);
