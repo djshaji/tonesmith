@@ -54,63 +54,38 @@
       }
     }
   },
-
-  "32400": {
-    "name": "Amplifier",
+  "21300": {
+    "name": "Overdrive",
     "controls": {
-      "2": {
-        "InputPort": true,
-        "ControlPort": true,
-        "default": "20.0",
-        "index": 2,
-        "maximum": "100.0",
-        "minimum": "1.0",
-        "name": "Distortion",
-        "symbol": "Distortion"
-      },
       "3": {
         "InputPort": true,
         "ControlPort": true,
-        "default": "0.25",
+        "default": "0.5",
         "index": 3,
         "maximum": "1.0",
-        "minimum": "0.01",
-        "name": "Drive",
-        "symbol": "Drive"
-      },
-      "8": {
-        "InputPort": true,
-        "ControlPort": true,
-        "default": "5.0",
-        "index": 8,
-        "maximum": "10.0",
         "minimum": "0.0",
-        "name": "Presence",
-        "symbol": "Presence"
+        "name": "GAIN",
+        "symbol": "GAIN"
       },
-      "9": {
+      "4": {
         "InputPort": true,
         "ControlPort": true,
-        "default": 0,
-        "index": 9,
-        "maximum": 18,
-        "minimum": 0,
-        "name": "Model",
-        "portProperty": "http://lv2plug.in/ns/lv2core#enumeration",
-        "scalePoint": "_:n9b565a7eacba47e48628b74fdc44504bb29",
-        "symbol": "model"
+        "default": "0.5",
+        "index": 4,
+        "maximum": "1.0",
+        "minimum": "0.0",
+        "name": "TONE",
+        "symbol": "TONE"
       },
-      "10": {
+      "5": {
         "InputPort": true,
         "ControlPort": true,
-        "default": 1,
-        "index": 10,
-        "maximum": 26,
-        "minimum": 0,
-        "name": "Tonestack Model",
-        "portProperty": "http://lv2plug.in/ns/lv2core#enumeration",
-        "scalePoint": "_:n9b565a7eacba47e48628b74fdc44504bb57",
-        "symbol": "t_model"
+        "default": "0.5",
+        "index": 5,
+        "maximum": "1.0",
+        "minimum": "0.0",
+        "name": "VOLUME",
+        "symbol": "VOLUME"
       }
     }
   },
@@ -167,6 +142,65 @@
         "name": "HIGHGAIN",
         "portProperty": "http://lv2plug.in/ns/lv2core#toggled",
         "symbol": "HIGHGAIN"
+      }
+    }
+  },
+  "32400": {
+    "name": "Amplifier",
+    "controls": {
+      "2": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": "20.0",
+        "index": 2,
+        "maximum": "100.0",
+        "minimum": "1.0",
+        "name": "Distortion",
+        "symbol": "Distortion"
+      },
+      "3": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": "0.25",
+        "index": 3,
+        "maximum": "1.0",
+        "minimum": "0.01",
+        "name": "Drive",
+        "symbol": "Drive"
+      },
+      "8": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": "5.0",
+        "index": 8,
+        "maximum": "10.0",
+        "minimum": "0.0",
+        "name": "Presence",
+        "symbol": "Presence"
+      },
+      "9": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 0,
+        "index": 9,
+        "maximum": 18,
+        "minimum": 0,
+        "name": "Model",
+        "portProperty": "http://lv2plug.in/ns/lv2core#enumeration",
+        "scalePoint": "_:n9b565a7eacba47e48628b74fdc44504bb29",
+        "symbol": "model"
+      },
+      "10": {
+        "InputPort": true,
+        "ControlPort": true,
+        "default": 1,
+        "index": 10,
+        "maximum": 26,
+        "minimum": 0,
+        "name": "Tonestack Model",
+        "portProperty": "http://lv2plug.in/ns/lv2core#enumeration",
+        "scalePoint": "_:n9b565a7eacba47e48628b74fdc44504bb57",
+        "symbol": "t_model"
       }
     }
   },

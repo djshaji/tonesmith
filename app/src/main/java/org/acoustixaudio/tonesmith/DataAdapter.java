@@ -149,9 +149,9 @@ public class DataAdapter extends RecyclerView.Adapter <DataAdapter.ViewHolder> {
                 double min = controls.getDouble("minimum");
                 double max = controls.getDouble("maximum");
                 String cname = controls.getString("name");
-                Log.d(TAG, String.format ("[control]: %s [%f %f %f]",
-                        cname,
-                        def, min, max));
+//                Log.d(TAG, String.format ("[control]: %s [%f %f %f]",
+//                        cname,
+//                        def, min, max));
                 if (max < min) {
                     double t = max ;
                     max = min ;
@@ -169,7 +169,7 @@ public class DataAdapter extends RecyclerView.Adapter <DataAdapter.ViewHolder> {
                     }
                 }
 
-                Log.d(TAG, String.format ("[control index]: %s", index));
+//                Log.d(TAG, String.format ("[control index]: %s", index));
 
                 TextView textView = new TextView(mainActivity);
                 textView.setText(cname);
@@ -183,11 +183,16 @@ public class DataAdapter extends RecyclerView.Adapter <DataAdapter.ViewHolder> {
                 controlDefaults.add(controlDefault);
                 holder.sliders.add(slider);
 
+                Spinner spinner = new Spinner(context);
+                float spinnerValue = 0;
+
                 try {
                     float value = AudioEngine.getActivePluginValueByIndex(position, index.get(0)) ;
                     Log.i(TAG, name +
                             String.format (" value %d:%d %f", position, index.get(0), value));
                     slider.setValue(value);
+                    spinnerValue = value;
+
                     slider.setValueTo((float) max);
                     slider.setValueFrom((float) min);
                 } catch (IllegalStateException e) {
@@ -195,8 +200,6 @@ public class DataAdapter extends RecyclerView.Adapter <DataAdapter.ViewHolder> {
                 }
 
                 boolean isSpinner = false;
-                Spinner spinner ;
-                spinner = new Spinner(context);
 
                 Button prev = new Button(context);
                 Button next = new Button(context);
@@ -226,6 +229,8 @@ public class DataAdapter extends RecyclerView.Adapter <DataAdapter.ViewHolder> {
                             android.R.layout.simple_spinner_item, models);
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     spinner.setAdapter(adapter);
+
+                    spinner.setSelection((int) spinnerValue);
 
                     prev = new Button(context);
                     next = new Button(context);
@@ -268,6 +273,7 @@ public class DataAdapter extends RecyclerView.Adapter <DataAdapter.ViewHolder> {
                     layout.addView(spinner);
 
                     slider.setVisibility(View.GONE);
+
                     spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -354,7 +360,7 @@ public class DataAdapter extends RecyclerView.Adapter <DataAdapter.ViewHolder> {
         JSONObject jsonObject = new JSONObject();
         try {
             for (int i = 0 ; i < holders.size() ; i ++) {
-                Log.d(TAG, String.format ("[%d]: {%s]", i, holders.get(i).pluginName.getText()));
+//                Log.d(TAG, String.format ("[%d]: {%s]", i, holders.get(i).pluginName.getText()));
                 JSONObject object = new JSONObject();
                 ViewHolder viewHolder = holders.get(i);
 
@@ -392,11 +398,11 @@ public class DataAdapter extends RecyclerView.Adapter <DataAdapter.ViewHolder> {
                 JSONObject object = jsonObject.getJSONObject(String.valueOf(key));
                 Iterator<String> controls = object.keys();
 
-                Log.d(TAG, String.format("[%d] %s", key, object));
+//                Log.d(TAG, String.format("[%d] %s", key, object));
                 while (controls.hasNext()) {
                     String control = controls.next();
                     if (object.get(control) instanceof JSONArray) {
-                        Log.d(TAG, "loadPreset: " + object.getJSONArray(control));
+//                        Log.d(TAG, "loadPreset: " + object.getJSONArray(control));
                     }
 
                     if (Objects.equals(control, "-1")) {
@@ -405,7 +411,7 @@ public class DataAdapter extends RecyclerView.Adapter <DataAdapter.ViewHolder> {
                     } else {
                         double value = object.getDouble(String.valueOf(control));
 //                        Log.d(TAG, String.format ("[control]: %s [%f]", control, value));
-                        Log.d(TAG, String.format ("[%s / %d]: [%s / %d]", key, holders.size(), control, holders.get(key).sliders.size()));
+//                        Log.d(TAG, String.format ("[%s / %d]: [%s / %d]", key, holders.size(), control, holders.get(key).sliders.size()));
                         holders.get(key).sliders.get(Integer.parseInt(control)).setValue((float) value);
                     }
                 }
