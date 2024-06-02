@@ -527,7 +527,7 @@ public class MainActivity extends AppCompatActivity {
         applySettings();
 
         if (BuildConfig.BUILD_TYPE.equals("debug")) {
-//            proVersion = true ;
+            proVersion = true ;
         }
 
         if (proVersion) {
