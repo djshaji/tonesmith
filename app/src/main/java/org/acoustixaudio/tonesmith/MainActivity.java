@@ -47,6 +47,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -271,7 +272,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (filename != null)
-                    shareFile(new File(filename));
+                    shareFile(new File(filename + ".mp3"));
             }
         });
         lastPlayPause.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -294,8 +295,12 @@ public class MainActivity extends AppCompatActivity {
             public void onIsPlayingChanged(boolean isPlaying) {
                 Log.i(TAG, "onIsPlayingChanged: " + isPlaying);
                 Player.Listener.super.onIsPlayingChanged(isPlaying);
-                if (! isPlaying)
+                if (! isPlaying) {
                     lastPlayPause.setChecked(false);
+                    MediaItem mediaItem = MediaItem.fromUri(filename + ".mp3");
+                    mediaPlayer.setMediaItem(mediaItem);
+                    mediaPlayer.prepare();
+                }
             }
         });
 
@@ -1040,6 +1045,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
 //        loadPlugins();
+    }
+
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
+                == PackageManager.PERMISSION_GRANTED) {
+            startEffect();
+        } else {
+//            record.setChecked(false);
+        }
     }
 }
 
