@@ -110,7 +110,7 @@ public class DataAdapter extends RecyclerView.Adapter <DataAdapter.ViewHolder> {
             @Override
             public void onClick(View v) {
                 if (holder.switchMaterial.isChecked() && ! mainActivity.proVersion && AudioEngine.getActiveEnabledPlugins() > 1) {
-                    mainActivity.startActivity(new Intent(mainActivity,Purchase.class));
+//                    mainActivity.startActivity(new Intent(mainActivity,Purchase.class));
                 }
             }
         });

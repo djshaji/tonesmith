@@ -132,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
     private PurchasesResponseListener purchasesResponseListener;
     private PurchasesUpdatedListener purchasesUpdatedListener;
     private BillingClient billingClient;
+    private boolean nag = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -411,6 +412,11 @@ public class MainActivity extends AppCompatActivity {
                         stopEffect();
                     } else {
                         record.setChecked(false);
+                    }
+
+                    if (nag && ! proVersion) {
+                        nag = false ;
+                        startActivity(new Intent(mainActivity,org.acoustixaudio.tonesmith.Purchase.class));
                     }
                 }
             }
